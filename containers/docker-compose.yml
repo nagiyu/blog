@@ -13,9 +13,9 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress_data:/var/www/html
-      - ./.htaccess:/var/www/html/.htaccess
-      - ./ads.txt:/var/www/html/ads.txt
+      - ./wordpress/resources:/var/www/html
+      - ./wordpress/.htaccess:/var/www/html/.htaccess
+      - ./wordpress/ads.txt:/var/www/html/ads.txt
 
   db:
     image: mysql:5.7
@@ -27,8 +27,4 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_ROOT_PASSWORD: rootpass
     volumes:
-      - db_data:/var/lib/mysql
-
-volumes:
-  wordpress_data:
-  db_data:
+      - ./db/resources:/var/lib/mysql
