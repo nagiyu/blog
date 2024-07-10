@@ -15,7 +15,6 @@ services:
     volumes:
       - ./resources/wordpress:/var/www/html
       - ./wordpress/.htaccess:/var/www/html/.htaccess
-      - ./wordpress/ads.txt:/var/www/html/ads.txt
 
   db:
     image: mysql:5.7
